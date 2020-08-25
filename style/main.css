@@ -50,9 +50,23 @@ img.textLogo {
   border: 1px solid#dbdbdb;
   border-radius: 5px;
   padding: 5px 0 5px 0;
-  background-image: url("");
   background-color: #fafafa;
   text-align: center;
+}
+
+.search i {
+  position: absolute;
+}
+
+.searchIcon {
+  padding: 6px;
+  margin-left: 70px;
+  min-width: 40px;
+}
+
+.searchIcon > img {
+  width: 12px;
+  height: 12px;
 }
 
 /* nav menus layout */
@@ -120,15 +134,15 @@ main {
   height: 24px;
 }
 
+/* common */
+.detail {
+  padding: 8px 12px;
+}
+
 .profileLoca,
 .profileLoca2 {
   font-size: 12px;
   color: #dbdbdb;
-}
-
-/* common */
-.common {
-  padding: 8px 12px;
 }
 
 /* main picture likebar */
@@ -153,107 +167,161 @@ main {
   list-style: none;
 }
 
+/* 좋아요 누른 사람 구현 */
+
 .likedBy {
-  margin: 12px 0;
+  height: 24px;
+  display: flex;
+  align-items: center;
 }
 
-.desc {
-  margin: 12px 0;
+.likedBy img {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
 }
 
-/* picture comment */
+.likedBy .likeId,
+.likedBy .likeNumber {
+  font-weight: 700;
+}
+
+/* 댓글 */
 .comment {
+  margin: 12px 0;
+}
+
+.comment .commentList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment .commentId {
+  font-weight: 700;
+}
+
+/* 댓글 업로드 : picture comment */
+.commentUpload {
   height: 56px;
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 0 12px 0 12px;
+  padding: 0 12px;
   border-top: 1px solid #dbdbdb;
 }
 
-.comment input {
+.commentUpload > .commentDesc {
   width: 100%;
   border: none;
   resize: none;
 }
 
-.comment button {
-  width: 55px;
+.commentUpload > .commentBtn {
+  width: 50px;
   background-color: white;
   border: none;
   color: #0095f6;
 }
 
+/* 업로드 시간 */
+.uploadTime > span {
+  color: gray;
+}
+
 /* main-right */
 
 .main-right {
-  width: 250px;
+  width: 265px;
   display: flex;
   flex-direction: column;
 }
 
-/*  main right title */
+/*  공통 : main right title */
 .rightTitle {
   color: grey;
 }
 
-/* main-right profile */
+/*  공통 : main right see All */
+.seeAll {
+  font-weight: 500;
+}
+
+/* 공통 : main-right profile */
 .main-right {
   display: flex;
   flex-direction: column;
 }
 
-.profileSide {
+/* main-rioght에 있는 모든 간단 프로필 CSS*/
+.profileSimple {
   height: 70px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.profileSide > div {
-  margin-left: 12px;
-  display: flex;
-  flex-direction: column;
-}
-
-.profileSide > img,
-.usersProfile > ul > li > img {
+.profileSimple img {
   width: 48px;
   height: 48px;
   border-radius: 40px;
 }
 
-/* side story */
+.profileSimple .left {
+  display: flex;
+  align-items: center;
+}
 
+.profileSimple > .left > .account {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.profileSimple .right {
+  font-size: 12px;
+}
+
+/* 섹션 별로 달라지는 profilesimple css */
+.myAccount .right {
+  display: none;
+}
+
+.story .right {
+  display: none;
+}
+
+.story .profileSimple,
+.recommend .profileSimple {
+  height: 55px;
+}
+
+.recommend .right {
+  color: #0095f6;
+}
+
+/* side story 공통 */
 .story {
   border: 1px solid #dbdbdb;
   padding: 10px;
   font-size: 12px;
+  margin-bottom: 12px;
+  height: 300px;
+  overflow: auto;
 }
 
-.story > div {
+.story > .usersProfile,
+.recommend > .usersProfile {
+  margin-top: 12px;
+}
+
+.story > .storyTitle {
   display: flex;
   justify-content: space-between;
 }
 
-.usersProfile > ul {
-  width: 100%;
-  padding: 0;
-  list-style: none;
-}
-
-.usersProfile > ul > li {
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-}
-
-.usersProfile > ul > li > div {
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-}
-
-/* side recommend */
+/* side recommend 공통*/
 
 .recommend {
   border: 1px solid #dbdbdb;
@@ -261,7 +329,7 @@ main {
   font-size: 12px;
 }
 
-.recommend > div {
+.recommend > .recommendTitle {
   display: flex;
   justify-content: space-between;
 }
